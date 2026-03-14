@@ -72,6 +72,44 @@
   .footer-links { display: flex; gap: 16px; }
   .footer-links a { color: var(--muted); text-decoration: none; }
   .footer-links a:hover { color: var(--green); }
+
+  @media (max-width: 768px) {
+    .os-header { padding: 10px 16px; flex-wrap: wrap; gap: 8px; }
+    .os-header nav { display: none; }
+    .os-main { padding: 24px 16px; }
+
+    /* Hacked section */
+    .hacked-stamp { flex-direction: column !important; gap: 12px !important; }
+    
+    /* Stats row - 2x2 grid on mobile */
+    .stats { flex-wrap: wrap; }
+    .stat { flex: 1 1 45%; border-right: none !important; border-bottom: 1px solid var(--border); }
+    .stat-value { font-size: 22px; }
+    .stat-label { font-size: 9px; }
+
+    /* Terminal */
+    .t-output { padding-left: 10px; font-size: 10px; }
+
+    /* Cards - single column */
+    .card-grid { grid-template-columns: 1fr !important; }
+    .card[style*="grid-column"] { grid-column: 1 !important; }
+
+    /* Tweets - single column */
+    div[style*="repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+
+    /* Experience table */
+    .data-table thead { display: none; }
+    .data-table tr { display: block; border-bottom: 1px solid var(--border); padding: 12px 0; }
+    .data-table td { display: block; border-bottom: none; padding: 4px 12px; }
+    .data-table td:first-child { color: var(--muted); font-size: 10px; }
+
+    /* Music player */
+    #music-btn { font-size: 10px; padding: 8px 12px; }
+
+    /* Hacked section text */
+    .os-footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
 </style>
 </head>
 <body>
@@ -116,7 +154,7 @@
       </div>
     </div>
     <!-- HACKED STAMP + PEPE -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-4deg);z-index:20;display:flex;align-items:center;justify-content:center;gap:24px;white-space:nowrap;">
+    <div class="hacked-stamp" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-4deg);z-index:20;display:flex;align-items:center;justify-content:center;gap:24px;white-space:nowrap;">
       <div style="text-align:center;">
         <div style="font-family:'JetBrains Mono','Space Mono',monospace;font-weight:700;font-size:clamp(36px,6vw,72px);color:#ff2222;letter-spacing:0.04em;text-shadow:0 0 30px rgba(255,30,30,0.6),0 0 60px rgba(255,30,30,0.3);">HACKED BY</div>
         <div style="font-family:'JetBrains Mono','Space Mono',monospace;font-weight:700;font-size:clamp(42px,7vw,84px);color:#ff2222;letter-spacing:0.04em;text-shadow:0 0 30px rgba(255,30,30,0.7),0 0 80px rgba(255,30,30,0.4);">ROMEROJR</div>
