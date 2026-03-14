@@ -112,6 +112,12 @@
 
 <header class="os-header">
   <div class="os-path"><span>romerojr://</span>terminal-portfolio<span>$</span></div>
+  <nav style="display:flex;gap:20px;">
+    <a href="#stats" style="color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">about</a>
+    <a href="#work" style="color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">work</a>
+    <a href="#wins" style="color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">social wins</a>
+    <a href="#experience" style="color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--muted)'">experience</a>
+  </nav>
   <div class="os-status">
     <div class="status-dot"></div>
     <span class="status-text">LIVE</span>
@@ -154,7 +160,7 @@
 
   </div>
 
-  <div class="stats">
+  <div class="stats" id="stats">
     <div class="stat"><span class="stat-value">11+</span><span class="stat-label">marketing experience</span></div>
     <div class="stat"><span class="stat-value">5+</span><span class="stat-label">companies incl. Gemini, Nifty Gateway</span></div>
     <div class="stat"><span class="stat-value">50+</span><span class="stat-label">high impact campaigns</span></div>
@@ -176,7 +182,7 @@
   </div>
 
   <div class="section">
-    <div class="section-header">// selected work</div>
+    <div class="section-header" id="work">// selected work</div>
     <div class="card-grid">
       <div class="card" style="grid-column: 1 / -1;">
         <div class="card-tag">Live Event</div>
@@ -200,23 +206,23 @@
   </div>
 
   <div class="section">
-    <div class="section-header">// favorite social media wins</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+    <div class="section-header" id="wins">// favorite social media wins</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
       <div>
         <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
       </div>
       <div>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Agoric Orchestration API is now LIVE on Mainnet 🚀<br><br>Say goodbye to complex, multi-step chaos and witness the power of one-click, cross-chain innovation!<br><br>🔄 Ready to build the impossible?<br><br>↓ <a href="https://t.co/UllUHygaJL">pic.twitter.com/UllUHygaJL</a></p>&mdash; Agoric (@agoric) <a href="https://twitter.com/agoric/status/1843713327392010725?ref_src=twsrc%5Etfw">October 8, 2024</a></blockquote>
       </div>
       <div>
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">★ Introducing our newest feature, Composer!<br><br>○ Create Stories: long form content with on &amp; off-chain assets<br>○ Curate Showcases: drops &amp; themed curations with curator fees<br>○ Compose Open Calls: contests, exhibitions &amp; more<br><br>Your journey starts here ↓<a href="https://t.co/Rk81N0YHca">https://t.co/Rk81N0YHca</a> <a href="https://t.co/wQwqOZ74kG">pic.twitter.com/wQwqOZ74kG</a></p>&mdash; Joyn (@joynxyz) <a href="https://twitter.com/joynxyz/status/1688569550562803713?ref_src=twsrc%5Etfw">August 7, 2023</a></blockquote>
       </div>
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <div class="section">
-    <div class="section-header">// experience</div>
+    <div class="section-header" id="experience">// experience</div>
     <table class="data-table">
       <thead>
         <tr>
