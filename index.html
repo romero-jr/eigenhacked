@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terminal OS — Base Template</title>
+<title>Romero Jr x Eigen Layer</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
 
@@ -43,9 +43,6 @@
   }
   .os-path { color: var(--green); font-size: 11px; }
   .os-path span { color: var(--muted); }
-  .os-nav { display: flex; gap: 20px; }
-  .os-nav a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.15s; }
-  .os-nav a:hover { color: var(--green); }
   .os-status { display: flex; gap: 8px; align-items: center; }
   .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
@@ -56,13 +53,6 @@
   .boot-line { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
   .boot-line .cmd { color: var(--green); }
   .boot-line .comment { color: #444; }
-
-  .hero { margin: 48px 0 40px; }
-  .hero-eyebrow { font-size: 10px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
-  .hero-eyebrow::before { content: '// '; color: #333; }
-  .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 8px; }
-  .hero h1 em { color: var(--green); font-style: normal; }
-  .hero-sub { font-size: 13px; color: var(--muted); margin-top: 16px; max-width: 520px; line-height: 1.8; }
 
   .stats { display: flex; gap: 1px; margin: 40px 0; border: 1px solid var(--border); }
   .stat { flex: 1; padding: 20px; background: var(--bg2); text-align: center; border-right: 1px solid var(--border); }
@@ -80,7 +70,6 @@
   .t-line { display: flex; gap: 8px; margin-bottom: 6px; font-size: 12px; }
   .t-prompt { color: var(--green); user-select: none; }
   .t-cmd { color: var(--text); }
-  .t-comment { color: #444; font-size: 11px; }
   .t-output { color: var(--muted); font-size: 11px; padding-left: 20px; margin-bottom: 8px; }
   .t-flag { color: var(--amber); }
   .cursor { display: inline-block; width: 8px; height: 13px; background: var(--green); animation: blink 1s step-end infinite; vertical-align: middle; }
@@ -99,18 +88,19 @@
 
   .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
   .data-table th { text-align: left; font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border); }
-  .data-table td { padding: 10px 12px; font-size: 12px; border-bottom: 1px solid var(--border); transition: background 0.1s; }
+  .data-table td { padding: 10px 12px; font-size: 12px; border-bottom: 1px solid var(--border); transition: background 0.1s; vertical-align: top; }
   .data-table tr:last-child td { border-bottom: none; }
   .data-table tbody tr:hover td { background: var(--green-muted); }
   .tag-pill { display: inline-block; font-size: 9px; padding: 2px 8px; border: 1px solid var(--border2); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
   .tag-pill.active { border-color: var(--green); color: var(--green); }
+  .role-desc { font-size: 10px; color: var(--muted); margin-top: 6px; line-height: 1.7; }
+  .role-desc li { margin-bottom: 3px; list-style: none; padding-left: 12px; position: relative; }
+  .role-desc li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-size: 9px; }
 
   .btn { display: inline-block; padding: 10px 20px; font-family: var(--font); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid var(--border2); color: var(--text); background: transparent; cursor: pointer; transition: all 0.15s; text-decoration: none; }
   .btn:hover { border-color: var(--green); color: var(--green); background: var(--green-muted); }
   .btn.primary { border-color: var(--green); color: var(--green); }
   .btn.primary:hover { background: var(--green); color: #000; }
-
-  .banner { border: 1px solid var(--amber); background: rgba(255,184,0,0.05); padding: 10px 16px; font-size: 11px; color: var(--amber); display: flex; gap: 10px; align-items: flex-start; margin: 24px 0; }
 
   .os-footer { border-top: 1px solid var(--border); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--muted); margin-top: 80px; }
   .footer-links { display: flex; gap: 16px; }
@@ -121,13 +111,7 @@
 <body>
 
 <header class="os-header">
-  <div class="os-path"><span>yoursite://</span>home<span>$</span></div>
-  <nav class="os-nav">
-    <a href="#">about</a>
-    <a href="#">work</a>
-    <a href="#">writing</a>
-    <a href="#">contact</a>
-  </nav>
+  <div class="os-path"><span>romerojr://</span>terminal-portfolio<span>$</span></div>
   <div class="os-status">
     <div class="status-dot"></div>
     <span class="status-text">LIVE</span>
@@ -137,7 +121,7 @@
 <main class="os-main">
 
   <div>
-    <div class="boot-line"><span class="cmd">yourname@os:~$</span> <span class="comment">// initializing...</span></div>
+    <div class="boot-line"><span class="cmd">romerojr@os:~$</span> <span class="comment">// initializing...</span></div>
     <div class="boot-line"><span class="cmd">load profile --full</span></div>
     <div class="boot-line" style="color:#444">OS [VERSION 1.0] — ready</div>
   </div>
@@ -145,11 +129,9 @@
   <!-- HACKED SECTION -->
   <div style="position:relative;margin:48px 0 64px;padding:48px 0;">
 
-    <!-- STRIKETHROUGH OVERLAY -->
     <div style="position:absolute;top:50%;left:-2%;width:104%;height:6px;background:#ff2222;transform:rotate(-2deg);z-index:10;box-shadow:0 0 18px rgba(255,30,30,0.5);"></div>
     <div style="position:absolute;top:44%;left:-2%;width:104%;height:3px;background:#ff2222;opacity:0.4;transform:rotate(-2deg);z-index:10;"></div>
 
-    <!-- ORIGINAL CONTENT (crossed out) -->
     <div style="opacity:0.45;filter:blur(0.4px);">
       <div style="font-size:11px;color:#00ff88;letter-spacing:0.1em;margin-bottom:20px;">$ RUN VOTE.SH --OPEN --VIBES-ONLY</div>
       <div style="font-family:'JetBrains Mono','Space Mono',monospace;font-weight:700;font-size:clamp(52px,9vw,96px);line-height:1.0;letter-spacing:-0.01em;">
@@ -165,7 +147,6 @@
       </div>
     </div>
 
-    <!-- HACKED STAMP -->
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-4deg);z-index:20;text-align:center;white-space:nowrap;">
       <div style="font-family:'JetBrains Mono','Space Mono',monospace;font-weight:700;font-size:clamp(36px,6vw,72px);color:#ff2222;letter-spacing:0.04em;text-shadow:0 0 30px rgba(255,30,30,0.6),0 0 60px rgba(255,30,30,0.3);">HACKED BY</div>
       <div style="font-family:'JetBrains Mono','Space Mono',monospace;font-weight:700;font-size:clamp(42px,7vw,84px);color:#ff2222;letter-spacing:0.04em;text-shadow:0 0 30px rgba(255,30,30,0.7),0 0 80px rgba(255,30,30,0.4);">ROMEROJR</div>
@@ -198,12 +179,12 @@
     <div class="section-header">// selected work</div>
     <div class="card-grid">
       <div class="card" style="grid-column: 1 / -1;">
-        <div class="card-tag">Campaign</div>
-        <div class="card-title" style="margin-bottom:14px;">Joyn — Product Launch Live Stream</div>
-        <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:14px;">
+        <div class="card-tag">Live Event</div>
+        <div class="card-title" style="margin-bottom:6px;">Joyn — Product Launch Live Stream</div>
+        <div class="card-desc" style="margin-bottom:14px;">Live stream amassed 2K live viewers on X and 10K+ views lifetime for new product launch at Joyn.</div>
+        <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
           <iframe src="https://www.youtube.com/embed/N3OJytltNS4" title="Joyn Product Launch Live Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid var(--border);"></iframe>
         </div>
-        <div class="card-desc">Live Stream amassed 2K live viewers on X and total 10K+ views lifetime for new product launch at Joyn.</div>
       </div>
       <div class="card">
         <div class="card-tag">Content</div>
@@ -216,6 +197,22 @@
         <div class="card-desc">Short description of the project — what you did, what it achieved. One or two lines.</div>
       </div>
     </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">// favorite social media wins</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
+      </div>
+      <div>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
+      </div>
+      <div>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">1/ Today we are excited to introduce✨Publishers✨<br>A new platform that will enable people to curate their own drops on Nifty Gateway. <a href="https://t.co/SUsOUhdzS0">pic.twitter.com/SUsOUhdzS0</a></p>&mdash; Nifty Gateway Studio (@niftygateway) <a href="https://twitter.com/niftygateway/status/1565324386323890178?ref_src=twsrc%5Etfw">September 1, 2022</a></blockquote>
+      </div>
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <div class="section">
@@ -233,40 +230,56 @@
       <tbody>
         <tr>
           <td style="color:var(--muted)">01</td>
-          <td style="color:#fff">Company A</td>
-          <td>Role Title</td>
-          <td style="color:var(--muted)">2023–2026</td>
+          <td style="color:#fff">Agoric</td>
+          <td>
+            Social & Content Lead
+            <ul class="role-desc">
+              <li>Owned social and content strategy end-to-end — brand voice, content pillars, channel cadence, and growth loops across X and LinkedIn, driving 40% engagement increase and durable mindshare in the Web3 developer ecosystem</li>
+              <li>Built AI-powered and agentic content workflows that 3x'd output and cut production time 70% — developed team playbooks for accelerated ideation, drafting, and multi-channel distribution</li>
+              <li>Led real-time narrative and rapid-response strategy — monitored industry conversations as they surfaced, coordinated cross-functionally on sensitive topics, and deployed counter-narratives to address FUD under pressure</li>
+            </ul>
+          </td>
+          <td style="color:var(--muted);white-space:nowrap;">Sep 2024–Mar 2026</td>
           <td><span class="tag-pill active">full-time</span></td>
         </tr>
         <tr>
           <td style="color:var(--muted)">02</td>
-          <td style="color:#fff">Company B</td>
-          <td>Role Title</td>
-          <td style="color:var(--muted)">2021–2023</td>
-          <td><span class="tag-pill">contract</span></td>
+          <td style="color:#fff">Joyn</td>
+          <td>
+            Marketing Lead
+            <ul class="role-desc">
+              <li>Defined brand voice and social content pillars for a creator economy platform, doubling engagement through audience-native storytelling across X and community channels</li>
+              <li>Executed product launch narrative campaigns end-to-end — copy, distribution, and cross-functional coordination across content, research, and legal</li>
+              <li>Scaled a 6K-member technical creator community to 1K daily active users, building durable mindshare and reducing support volume 30%</li>
+            </ul>
+          </td>
+          <td style="color:var(--muted);white-space:nowrap;">Apr 2023–Mar 2024</td>
+          <td><span class="tag-pill active">full-time</span></td>
         </tr>
         <tr>
           <td style="color:var(--muted)">03</td>
-          <td style="color:#fff">Company C</td>
-          <td>Role Title</td>
-          <td style="color:var(--muted)">2019–2021</td>
+          <td style="color:#fff">Gemini &amp; Nifty Gateway</td>
+          <td>
+            Marketing Manager
+            <ul class="role-desc">
+              <li>Grew and managed a 30K-member online community for a 13M+ user fintech platform, driving 30% increase in active participation during high-pressure market conditions</li>
+              <li>Owned crisis communications and brand-safety messaging as the key external-facing voice during sensitive, high-visibility events — zero corporate speak</li>
+              <li>Promoted from Social Media Specialist to Marketing Manager in 6 months; managed 6+ agency partners and $50K–$100K monthly budget across PR, paid, and creative</li>
+            </ul>
+          </td>
+          <td style="color:var(--muted);white-space:nowrap;">Feb 2021–Aug 2022</td>
           <td><span class="tag-pill active">full-time</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="banner">
-    <span>⚠</span>
-    <span>This is a placeholder for a callout, disclaimer, or CTA. Swap this text for whatever you need.</span>
-  </div>
-
   <footer class="os-footer">
-    <span>yourname@os:~$ <span style="color:var(--green)">_</span></span>
+    <span>romerojr@os:~$ <span style="color:var(--green)">_</span></span>
     <div class="footer-links">
-      <a href="#">x/twitter</a>
-      <a href="#">linkedin</a>
-      <a href="#">email</a>
+      <a href="https://twitter.com/romerojr__">x/twitter</a>
+      <a href="https://www.linkedin.com/in/miguelromerojr/">linkedin</a>
+      <a href="mailto:miguel@romerojr.com">email</a>
     </div>
   </footer>
 
